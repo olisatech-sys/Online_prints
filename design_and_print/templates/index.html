@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design and Print Services</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Design and Print Services</h1>
+    </header>
+    <h1>All Available service for Booking</h1>
+    <ol>
+        {% for service in services %}
+        <li>{{ service.name }}</li>
+        {% endfor %}
+   </ol>
+   <h1>All books</h1>
+   <ol>
+    {% for book in books %}
+    <li>{{ book.name }}</li>
+    {% endfor %}
+   </ol>
+</body>
+</html>
