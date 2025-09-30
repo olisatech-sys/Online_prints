@@ -1,0 +1,18 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book - Home</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+  </head>
+  <body>
+    {% comment %} navbar area {% endcomment %}
+    {% include 'navbar.html' %}
+    {% block content %}
+    {% endblock%}
+  </body>
+</html>
