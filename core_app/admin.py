@@ -4,6 +4,11 @@ from .models import *
 
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', 'publish_date', 'quantity', 'date_uploaded')
+    list_filter = ('title', 'publish_date')
+    search_fields = ('title',)
 admin.site.register(Book, BookAdmin)
-# admin.site.register(Book)
-# admin.site.register(Purchase)
+
+
+class PurchaseAdmin(admin.ModelAdmin):
+    list_display = ('book_name', 'price', 'purcharsed_by', 'date_purchased')
+admin.site.register(Purchase, PurchaseAdmin)

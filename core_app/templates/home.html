@@ -2,5 +2,42 @@
 {% load static %}
 
 {% block content %}
-  <h1 class="text-center my-5 py-3">Home page</h1>
+  <div class="container-fluid bg-light text-dark py-5 my-4 px-3">
+    <div class="row gap-2 justify-content-center align-contents-center">
+      <div class="col col-sm">
+        <img src="{% static 'images/book1.jpg' %}" alt="" width="100%">
+      </div>
+      <div class="col col-sm justify-content-center align-contents-center">
+        <div class="display-1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In illum fugiat dolores necessitatibus ut? Fugiat, quod ipsa a, labore dolor ducimus voluptatem libero reprehenderit distinctio velit eos expedita vitae laboriosam incidunt perferendis omnis! Soluta.</p>
+        <div class="btn btn-primary">Purchase a Book</div>
+      </div>
+    </div>
+  </div>
+<!-- featured books -->
+ <div class="container mx-3 my-1 p-3">
+  <div class="row justify-content-center align-contents-center">
+    {% for book in books %}
+
+    <div class="col-3 p-2">
+      <div class="card" style="width: 100%;">
+        <div class="card-header">
+          <h1>{{ book.title }}</h1>
+        </div>
+        <div class="card-body">
+          <p>{{ book.description }}</p>
+          <small>Date: {{ book.publish_date }}</small>
+        </div>
+        <div class="card-footer">
+          <div class="d-grid">
+            <div class="btn btn-primary">Buy Now</div>
+          </div>
+        </div>
+      </div> 
+    </div>
+    {% endfor %}
+  </div>
+ </div>
 {% endblock %}
